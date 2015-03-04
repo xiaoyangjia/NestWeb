@@ -1,0 +1,24 @@
+{literal}
+DirectoryIndex index.html index.php
+RewriteEngine On
+Options All -Indexes
+
+RewriteRule class/(.*).(php)$ – [F]  
+RewriteRule include/(.*).(php)$ – [F]
+RewriteRule templates/(.*).(php)$ – [F]
+RewriteRule templates_c/(.*).(php)$ – [F]
+RewriteRule backup/(.*).(php)$ – [F]
+RewriteRule smarty/(.*).(php)$ – [F]
+RewriteRule include/(.*).(php)$ – [F]
+{/literal}
+
+{foreach from=$htaccess key=list item=i}
+{$i}
+{/foreach}
+
+{literal}
+ErrorDocument 401 /404.html
+ErrorDocument 403 /404.html
+ErrorDocument 404 /404.html
+ErrorDocument 500 /404.html
+{/literal}

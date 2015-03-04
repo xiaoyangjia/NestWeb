@@ -1,0 +1,10 @@
+<div id="{$spec_code}header">   
+	<div id="{$spec_code}menu">
+		<ul>
+		 	<li><a href='{$domain}'><span>首页</span></a></li>
+			{foreach from=$channels key=channel item=i}
+     		 <li><strong><a href="{$domain}/{$i.channel_alias}/index.html">{$i.channel_name}</a></strong></li>
+      		{/foreach}
+		</ul>
+	</div>
+</div>

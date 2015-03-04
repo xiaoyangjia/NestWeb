@@ -1,0 +1,9 @@
+User-agent: * 
+Disallow: /admin
+Disallow: /include
+Disallow: /Smarty
+Disallow: /templates
+Disallow: /templates_c
+Disallow: /class
+Disallow: /api
+Disallow: /backup

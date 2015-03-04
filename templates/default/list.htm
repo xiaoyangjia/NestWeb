@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$channel_name}</title>
+<meta name="keywords" content="{$seo_keywords}" />
+<meta name="description" content="{$seo_description}" />
+<link href="../style.css" rel="stylesheet" type="text/css" />
+{$analyze_code}
+</head>
+{if $show_target eq 1}
+<script src="../{$spec_code}.js" type="text/javascript"></script>
+{/if}
+<body>
+{include file="default/head.htm"}
+<div id="{$spec_code}main"> 
+	<ul id="{$spec_code}list">
+		{foreach from=$article_list key=list item=i}
+    	<li><a href="{$channel_root}/{$i.file_path}">{$i.title}</a></li>
+    	{/foreach}
+	 </ul>
+	 <div class="pager">{$pager}</div>
+</div>
+{include file="default/footer.htm"}
+</body>
+</html>

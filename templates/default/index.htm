@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$seo_title}</title>
+<meta name="keywords" content="{$seo_keywords}" />
+<meta name="description" content="{$seo_description}" />
+<link href="style.css" rel="stylesheet" media="screen" type="text/css" />
+{$analyze_code}
+</head>
+{if $show_target eq 1}
+<script src="{$spec_code}.js" type="text/javascript"></script>
+{/if}
+<body>
+{include file="default/head.htm"}
+<div id="{$spec_code}main"> 
+	<p>
+	{foreach from=$indexChannel key=index item=i}
+      <h3><a href="{$domain}/{$i.channels.channel_alias}/">{$i.channels.channel_name}</a></h3>
+	  <p>{$i.channels.channel_desc}</p>
+          <ul id="{$spec_code}list">
+            {foreach from=$i.articles key=article item=a}
+            <li><a href="{$domain}/{$i.channels.channel_alias}/{$a.file_path}">{$a.title}</a></li>
+            {/foreach}
+          </ul>
+      {/foreach}
+	  </p>
+</div>
+{include file="default/footer.htm"}
+</body>
+</html>
